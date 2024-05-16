@@ -10,10 +10,10 @@ class GameController extends Controller
 {
     public function getDataFromApi(Request $request)
     {
-        // Retrieve JWT token from the cookie
+
         $accessToken = $request->cookie('jwt');
 
-        $apiEndpoint = "https://marcconrad.com/uob/tomato/api.php"; // Replace with your API endpoint URL
+        $apiEndpoint = "https://marcconrad.com/uob/tomato/api.php";
 
         try {
             $response = Http::withHeaders([

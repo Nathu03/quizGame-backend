@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ScoreController;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
     Route::get('game', [GameController::class, 'getDataFromApi']);
     Route::post('logout', [AuthController::class,'logout']);
+    Route::post('/score', [ScoreController::class, 'saveGameData']);
+    Route::get('/scores', [ScoreController::class, 'index']);
 });
